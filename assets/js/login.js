@@ -42,10 +42,12 @@ $(function() {
     }
     $.post('/api/reguser', data, function(res) {
       if (res.status !== 0) {
-        return layer.msg(res.message)
+        // return layer.msg(res.message)
+       return layer.msg((res.message), {icon: 5}); 
       }
-      layer.msg('注册成功，请登录！')
-      // 模拟人的点击行为
+      // layer.msg('注册成功，请登录！')
+      layer.msg('注册成功,请登录', {icon: 6}); 
+      // 模拟人的点击行为，注册成功之后跳转登录
       $('#link_login').click()
     })
   })
